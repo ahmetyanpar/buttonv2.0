@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #bdbdbd;
+    height: 100vh;
+    margin: 0;
+}
+
+button {
+    position: relative;
+    margin: 0;
+    background: black;
+    border: none;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button-text {
+    color: white;
+    z-index: 2;
+    font-family: sans-serif;
+}
+
+button::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+button:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+button::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #990F02;
+    transition: transform 2s ease;
+}
